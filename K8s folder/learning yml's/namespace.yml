@@ -1,0 +1,9 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: nginx
+
+
+# command to run it -> kubectl apply -f namespace.yml
+# to undo it -> kubectl delete -f namespace.yml
+# to check it -> kubectl get namespace
