@@ -20,7 +20,7 @@ This repository contains structured knowledge, resources, and exercises to help 
 3. [Linux & Terminal](#3-linux--terminal)
 4. [Networking Fundamentals](#4-networking-fundamentals)
 5. [Containerization with Docker](#5-containerization-with-docker)
-
+6. [Orchestration with Kubernetes](#6-orchestration-with-kubernetes)
 
 ---
 
@@ -91,6 +91,7 @@ Get hands-on with terminal-based Linux environments. Key areas:
 - Containerization of simple web dev project called currency-converter [Used multi-stage deploy]
 - Containerization of notes-app created in django and used nginx reverse proxy in it.
 - Containerization of startup vite project with docker compose.
+- Containerization of nginx reverse proxy setup for 3 different routings.
 
 ### 🧪 Exercises
 
@@ -98,6 +99,21 @@ Get hands-on with terminal-based Linux environments. Key areas:
 - Create a **multi-stage Dockerfile**.
 - Package a Node.js or React app using Docker.
 - Understand build context and image layers.
+---
+## 6. Orchestration with Kubernetes
+
+### 📘 Resources
+
+- [Kubernetes Docs](https://kubernetes.io/docs/home/)
+- [Kind Quick Start](https://kind.sigs.k8s.io/docs/user/quick-start/)
+
+### 🧪 Concepts
+
+- Pods
+- Namespace
+- Deployment
+- Services
+
 ---
 Completed till here only -- = --
 ---
