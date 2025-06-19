@@ -90,7 +90,7 @@ Get hands-on with terminal-based Linux environments. Key areas:
 - Containerization of simple vite react app
 - Containerization of simple web dev project called currency-converter [Used multi-stage deploy]
 - Containerization of notes-app created in django and used nginx reverse proxy in it.
-
+- Containerization of startup vite project with docker compose.
 
 ### 🧪 Exercises
 
