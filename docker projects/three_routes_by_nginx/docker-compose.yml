@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+
+    depends_on:
+      - root
+      - app
+      - daemon
+
+
+  root:
+    build: ./root
+    expose:
+      - "8000"
+
+  app:
+    build: ./app
+    expose:
+      - "8080"
+
+  daemon:
+    build: ./daemon
+    expose:
+      - "4090"
+
