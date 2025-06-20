@@ -92,6 +92,7 @@ Get hands-on with terminal-based Linux environments. Key areas:
 - Containerization of notes-app created in django and used nginx reverse proxy in it.
 - Containerization of startup vite project with docker compose.
 - Containerization of nginx reverse proxy setup for 3 different routings.
+- Containerization of Web app Expense Calculator with Java
 
 ### 🧪 Exercises
 
@@ -99,6 +100,7 @@ Get hands-on with terminal-based Linux environments. Key areas:
 - Create a **multi-stage Dockerfile**.
 - Package a Node.js or React app using Docker.
 - Understand build context and image layers.
+- Completed this 
 ---
 ## 6. Orchestration with Kubernetes
 
@@ -113,6 +115,12 @@ Get hands-on with terminal-based Linux environments. Key areas:
 - Namespace
 - Deployment
 - Services
+- jobs
+- cronjons
+- daemonsets
+- replicasets
+- pv
+- pvc
 
 ---
 Completed till here only -- = --
@@ -122,4 +130,3 @@ Completed till here only -- = --
 ## ✅ Final Verdict :
 
 This is a **living document** and will be updated as I learn and apply more concepts. 
-
