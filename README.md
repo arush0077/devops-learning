@@ -121,6 +121,12 @@ Get hands-on with terminal-based Linux environments. Key areas:
 - replicasets
 - pv
 - pvc
+- ingress
+- configmap
+- resources
+- secrets
+- statefulSets
+- Node affinity Statefulness
 
 ---
 Completed till here only -- = --
