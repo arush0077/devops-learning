@@ -127,6 +127,19 @@ Get hands-on with terminal-based Linux environments. Key areas:
 - secrets
 - statefulSets
 - Node affinity Statefulness
+- DaemonSets
+- Replicasets
+- probes-> ready,live,startup
+- taint and tolerance
+- Roles
+- Serivce Account 
+- Role binding
+- Cluster Role
+
+
+### Projects
+
+- Small Notes app project with its own readme for full execution.
 
 ---
 Completed till here only -- = --
