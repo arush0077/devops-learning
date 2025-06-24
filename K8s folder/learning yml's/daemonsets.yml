@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: nginx-dae
+  namespace: temp
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      name: nginx-dae-pod
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx-cont
+          image: nginx
+          ports:
+            - containerPort: 80
+                                
