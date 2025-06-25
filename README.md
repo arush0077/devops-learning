@@ -135,6 +135,13 @@ Get hands-on with terminal-based Linux environments. Key areas:
 - Serivce Account 
 - Role binding
 - Cluster Role
+- taint and tolerance 
+- hpa
+- vpa
+- sidecar container
+- Node Affinity
+- Node Selector
+
 
 
 ### Projects
