@@ -1,0 +1,37 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: nginx-dep
+  namespace: temp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      name: nginx-dep-pod
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx-cont
+          image: nginx
+          ports:
+            - containerPort: 80
+      
+      resources: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-svc
+  namespace: temp
+spec:
+  selector:
+    app: nginx  # Match label in your Deployment (not "myapp")
+  ports:
+    - port: 80         # worker node port
+      targetPort: 80   #  container port
+      protocol: TCP
+  type: ClusterIP
