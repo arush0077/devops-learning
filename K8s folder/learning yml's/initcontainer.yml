@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp
+  labels:
+    app: myapp
+spec:
+  initContainers:
+    - name: init-myservice
+      image: busybox
+      command: ['sh', '-c', 'echo Initializing... ; sleep 5;echo completed;']
+      
+  
+  containers:
+    - name: myapp
+      image: nginx:latest         
+      ports:
+        - containerPort: 80    
+      resources:
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
+        requests:
+          memory: "64Mi"  
+          cpu: "250m"

@@ -1,0 +1,50 @@
+pods
+ns
+dep
+service
+jobs
+cronjons
+daemonsets
+replicasets
+pv
+pvc
+ingress
+stateful
+configmap
+secrets
+resorces 
+probes-> ready live startup
+taint and tolerance
+HPA VPA KEDA  -> rerouting  events hpa ,load based event to vpa
+stress generator
+Node Affinity
+
+
+
+-- Role Binding 
+[Namespace level]
+Role
+service account
+their bingind
+
+[Cluster Level]
+Cluster role 
+
+
+
+
+
+
+
+
+
+
+
+
+<----------- Helm Commands ------------->
+helm create apache 
+helm package apache
+helm insatll prod-apache apache -n apache --create-namespace
+helm uninsatll prod-apache
+helm upgrade prod-apache apache  //firstly ugrade the chart.yml version and then move forward and work ahead
+helm rollback prod apache 1 -n apache 

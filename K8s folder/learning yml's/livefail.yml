@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: probe-failure-demo
+spec:
+  containers:
+  - name: app
+    image: busybox
+    command: ["/bin/sh", "-c"]
+    args:
+      - echo "starting app"; \
+        touch /tmp/healthy; \
+        sleep 30; \
+        echo "crashing app"; \
+        rm -f /tmp/healthy; \
+        sleep 3600;
+    resources:
+      requests:
+        cpu: "100m"
+        memory: "128Mi"
+      limits:
+        cpu: "250m"
+        memory: "256Mi"
+
+    # Liveness probe checks for this file
+    livenessProbe:
+      exec:
+        command: ["cat", "/tmp/healthy"]
+      initialDelaySeconds: 10
+      periodSeconds: 5
+      failureThreshold: 2
+
+    # Readiness probe 
+    readinessProbe:
+      exec:
+        command: ["cat", "/tmp/healthy"]
+      initialDelaySeconds: 5
+      periodSeconds: 5
