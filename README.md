@@ -141,6 +141,16 @@ Get hands-on with terminal-based Linux environments. Key areas:
 - sidecar container
 - Node Affinity
 - Node Selector
+- Init Container
+- Istio Mesh
+- Helm Package Manager
+- Custom Resource Definitions
+- Port Forwarding
+- Minikube Addons (Metrics, Dashboard, Ingress)
+- Pod Affinity 
+- Monitoring 
+- logging and debugging 
+- Kubectl describe, logs, events etc..
 
 
 
