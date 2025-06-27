@@ -31,20 +31,51 @@ their bingind
 Cluster role 
 
 
+Monitoring and loggin with help of dashboard 
+custom resource distribution
+helm 
+sidecar 
+init container
+istio service mesh
+project1
+project 2
+
+------------------ Topics studied singally -----------------------
+
+Helm
+Sidecar / init containers 
+Daemonset ,Stateful set,Replicaset, Deployment
+Node Selector and Upgraded = Node Affinity
+Type of service: LB, NP, Cluster IP
+Pod Affinity
+Control Plane
+LifeCycle.
+Security Context.
+
+<------------> 
+
+Launch templates
+Istio service mesh
+Custom resource definitions
+IAM roles
+Firewall/Security groups.
+Security certificates
+
+
+-------------- Important commands ----------------
+
+kubectl port-forward svc/apache-svc 80:80 --address=0.0.0.0
+kubectl config set-context --current --namespace=apache
+kubectl taint node minikube-m02  prod=true:NoSchedule- -> untaint it
+kubectl taint node minikube-m02  prod=true:NoSchedule -> taint it
 
 
 
-
-
-
-
-
-
-
-<----------- Helm Commands ------------->
 helm create apache 
 helm package apache
 helm insatll prod-apache apache -n apache --create-namespace
 helm uninsatll prod-apache
 helm upgrade prod-apache apache  //firstly ugrade the chart.yml version and then move forward and work ahead
 helm rollback prod apache 1 -n apache 
+
+
