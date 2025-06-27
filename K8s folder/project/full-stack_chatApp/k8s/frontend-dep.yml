@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chat-app-frontend
+  namespace: chat-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chat-app-frontend
+  template:
+    metadata:
+      labels:
+        app: chat-app-frontend
+    spec:
+      containers:
+      - name: chat-app-frontend
+        image: arush75/chat-app-frontend:v1
+        ports:
+        - containerPort: 80
+        envFrom:
+        - configMapRef:
+            name: chat-app-config

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chat-app-backend
+  namespace: chat-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chat-app-backend
+  template:
+    metadata:
+      labels:
+        app: chat-app-backend
+    spec:
+      containers:
+      - name: chat-app-backend
+        image: arush75/chat-app-backend:v1
+        ports:
+        - containerPort: 5001
+        envFrom:
+        - configMapRef:
+            name: chat-app-config
+        - secretRef:
+            name: chat-app-secret
