@@ -151,12 +151,15 @@ Get hands-on with terminal-based Linux environments. Key areas:
 - Monitoring 
 - logging and debugging 
 - Kubectl describe, logs, events etc..
+- Topics.txt (Contains All the topics I studied)
 
 
 
 ### Projects
 
 - Small Notes app project with its own readme for full execution.
+- Project with 3-tier ChatApp With ingress port forwarding
+- Hands on project given in Document For learning of k8s
 
 ---
 Completed till here only -- = --
