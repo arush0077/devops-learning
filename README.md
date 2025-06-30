@@ -162,6 +162,49 @@ Get hands-on with terminal-based Linux environments. Key areas:
 - Hands on project given in Document For learning of k8s
 
 ---
+
+
+## 7. Terraform (IaC)
+
+### 📘 Topics
+
+- What is Terraform
+- Why use Terraform
+- How Terraform works
+- Terraform vs Ansible
+- Terraform vs CloudFormation
+- Cloud-specific IaC tools
+- Install Terraform via Chocolatey
+- .tf files
+- Block structure in Terraform
+- Parameters vs Arguments
+- Block types: variable, resource, output
+- Syntax: <block> <label> <block> { arguments }
+- terraform init
+- terraform validate
+- terraform apply -auto-approve
+- terraform destroy
+- terraform --target usage
+- Terraform providers
+- Provider configuration
+- AWS provider setup
+- AWS key pair
+- EC2 instance resource
+- Interpolation syntax
+- Key pair (key name, public, private)
+- Security group basics
+- Ingress and Egress rules
+- Security group tags
+- Variables block
+- Locals block
+- Validation block
+- Combine variable + locals + validation
+- object() type usage
+- .tfvars file
+- -var command line usage
+
+
+---
 Completed till here only -- = --
 ---
 
