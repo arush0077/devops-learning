@@ -202,6 +202,40 @@ Get hands-on with terminal-based Linux environments. Key areas:
 - object() type usage
 - .tfvars file
 - -var command line usage
+- outputs
+- count, for_each, depends_on
+- conditional expressions
+- list, map, object, loop
+- built-in functions
+- .tfstate has the state of your infrastructure → terraform refresh
+- terraform state list
+- terraform state mv <source> <destination>
+- terraform state show <name>
+- terraform state rm <name>
+- terraform import <resource> <id>
+- .tfstate file conflict: don't push to GitHub
+- Use S3 backend for safe tfstate storage
+- Use DynamoDB for state lock ID (state locking)
+- S3 → backend storage
+- DynamoDB → lock management
+- terraform workspace list
+- terraform workspace new <name>
+- Point GitHub to same workspace as local
+- terraform modules need source (local or remote)
+- Modules can be downloaded from Terraform Registry
+- You can create your own modules
+- Custom module structure:
+  - Main folder: main.tf, provider.tf, variables.tf, output.tf
+  - Sub folder (module): main.tf, variables.tf, output.tf
+  - Use `source = "./module-folder"` when calling a module
+
+
+### Projects
+
+- Small Notes app project with its own readme for full Infrastruture code.
+
+
+---
 
 
 ---
