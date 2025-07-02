@@ -21,6 +21,8 @@ This repository contains structured knowledge, resources, and exercises to help 
 4. [Networking Fundamentals](#4-networking-fundamentals)
 5. [Containerization with Docker](#5-containerization-with-docker)
 6. [Orchestration with Kubernetes](#6-orchestration-with-kubernetes)
+7. [IAC with Terraform](#7-terraform)
+8. [IAC with pulumi](#8-Pulumi)
 
 ---
 
@@ -233,9 +235,32 @@ Get hands-on with terminal-based Linux environments. Key areas:
 ### Projects
 
 - Small Notes app project with its own readme for full Infrastruture code.
+- Project with 3-tier ChatApp With ingress port forwarding with Terraform infra Management.
 
 
 ---
+
+## 8. Pulumi (IaC)
+
+### 📘 Topics
+
+- pulumi why
+- pulumi main.py
+- pulumi new \<What you want>
+- python -m venv venv
+- ./venv/scripts/activate- 
+- pulumi up --yes
+- pulumi destroy --yes
+- pulumi up --skip-preview- 
+- pulumi login 
+- pulumi logout- 
+- pulumi preview- 
+- pulumi stack ls
+- pulumi stack init 
+- pulumi stack select
+- pulumi stack rm
+
+
 
 
 ---
