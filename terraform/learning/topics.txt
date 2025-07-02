@@ -1,0 +1,68 @@
+What 
+Why 
+How
+Ansible vs terraform
+aws ka teraform hai cloudformation
+saare cloud ka apna infro 
+INstall terrazaform by choclate 
+tf files
+block paramerter arguments
+block -> variable resource output
+
+<block> <parameter> <denotion>  { args }
+
+terraform init validate apply -auto-approve destroy  --target
+
+terraform providers and their configurations 
+aws provider 
+aws key pair
+aws ec2
+interpolation
+
+key pair -> key name ,public and pvt key
+security grp -> ingress egress tags
+
+varibales and locals and validation block combine use with object() , .tfvars, -var in command line 
+outputs
+count ,for each, depends on
+conditional expresions
+list map object loop
+built in functions
+
+
+
+
+tfstate has the state of your thing -> terraform refresh
+terraform state list 
+state mv 
+terraform state show <name>
+terraform state rm <name>
+terraform import parameter.denotion (id of it)
+
+.tfstate file conflict and tf state cannot be pushed to github to usko s3 safe backend mai rakhdo [hum karenge state file locking]
+state lock id dynamo db ,s3, backend 
+
+
+workspace list and new and github point to same
+
+terraform modules needs source and could be taken from internet documentation
+
+module creation of our own -->
+- Main Folder = [main,provider,variables,output]
+- Sub  Folder = [main,variable,output]
+Source is important 
+
+
+
+
+Projects
+
+eks 
+notes app
+chat app
+
+
+---------- not used ----------
+provisioner and user data
+
+
