@@ -1,0 +1,9 @@
+encryptionsalt: v1:IdGR5x3ZPZo=:v1:LReEEbqHpDvaujHu:yGsPW3ScLWIs2jdOk3bAt25/tfoIAg==
+config:
+  k8s:namespace: apache
+  k8s:image: httpd
+  k8s:port: "8000"
+  k8s:targetPort: "80"
+  k8s:password:
+    secure: v1:8vXAXLeimcUuQezP:1xilBV/GvXCgrJ+qXamXLSGv1/s=
+  k8s:username: admin

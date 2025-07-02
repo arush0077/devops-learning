@@ -1,0 +1,11 @@
+name: k8s
+description: basic learnings first timer
+runtime:
+  name: python
+  options:
+    toolchain: pip
+    virtualenv: venv
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: kubernetes-python
