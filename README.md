@@ -260,7 +260,26 @@ Get hands-on with terminal-based Linux environments. Key areas:
 - pulumi stack select
 - pulumi stack rm
 
-
+- pulumi config set  \<key> \<value>
+- pulumi config get  \<key>
+- pulumi config rm \<key>
+- pulumi preview --diff
+- pulumi destroy --target
+- pulumi state ls
+- pulumi state 
+- Pulumi yaml 
+- stacks 
+- Configs
+- Secrets
+- Local vs cloud backend
+- Inputs ad  outputs
+- Error handling and debugging
+- pulumi import 
+- pulumi refresh 
+- pulumi state delete 
+- pulumi watch 
+- pulumi cancel
+- pulumi plugin
 
 
 ---
