@@ -1,0 +1,23 @@
+config:
+  chat-app:namespace: chat-app-dev
+  # MongoDB config
+  chat-app:mongodb_image: mongo
+  chat-app:mongodb_storage_size: 5Gi
+  # Backend config
+  chat-app:backend_image: arush75/chat-app-backend:v1
+  chat-app:backend_replicas: "1"
+  chat-app:backend_port: "5001"
+  chat-app:backend_node_env: production
+  # Frontend config
+  chat-app:frontend_image: arush75/chat-app-frontend:v1
+  chat-app:frontend_replicas: "1"
+  chat-app:frontend_port: "80"
+  # Ingress config
+  chat-app:ingress_enabled: "true"
+  chat-app:jwt_secret:
+    secure: v1:+lMCFv6JrV87vc3V:5ucjEMSPIJMymFN5qsMRD8fULPSgO8Wx5xGFBbxH1K5cymvAAjPQA4Qg+7BiEzQOMc69klcjVOba9+ZoLolNmDXQXwMblz4zRLwJXqp8lOiCTQvlHKl1PFj5PDhAVPQXzB5dSc75MReBb/uC+VqnkMMX6tZRiIWM3/9JKXY0z4BjmM15GSg80XjkVawM0rN/34TEavBrQXh4YJSd+Y+N7YhQ3od7ufb2YVZ7
+  chat-app:mongodb_root_username:
+    secure: v1:dk0Cn2dcDdig1T9S:+TQjrXgtCHb55q2pkSQCPwAVwFY=
+  chat-app:mongodb_root_password:
+    secure: v1:r8m1NdgZT2NX2B1z:SvoYCUm1gNPzBsTQbyf2bagyVmJi
+encryptionsalt: v1:Yenqh52PtcA=:v1:m3MwbS8/Ue7ZhytK:cBE39plj7r8kUiWlHgdFS+tVtLqlLA==
