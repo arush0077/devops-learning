@@ -1,0 +1,6 @@
+name: notes-app
+description: A Pulumi program to deploy Notes App on Kubernetes
+runtime:
+  name: python
+  options:
+    virtualenv: venv

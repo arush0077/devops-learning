@@ -1,0 +1,10 @@
+config:
+  notes-app:namespace: notes-app
+  notes-app:notesAppImage: trainwithshubham/notes-app-k8s
+  notes-app:nginxImage: nginx
+  notes-app:notesAppReplicas: "2"
+  notes-app:nginxReplicas: "2"
+  notes-app:notesAppPort: "8000"
+  notes-app:nginxPort: "80"
+  kubernetes:context: minikube
+encryptionsalt: v1:nsKmQ7zbcdw=:v1:MT5TgjPvaEIwCyVa:Pcvf6uEICRFe/dpOtSB3dzQYXBMvJA==
