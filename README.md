@@ -282,6 +282,31 @@ Get hands-on with terminal-based Linux environments. Key areas:
 - pulumi plugin
 
 
+### Hands on 
+
+- Hands on atsks from the Document of learning.
+
+
+---
+
+## 9. Monitoring (Prometheus, Loki, Grafana, Promtail, Alloy agent)
+
+### 📘 Topics
+
+- start monitoring 
+- learn about Grafana 
+- know observability 
+- promehteus and its node exporter
+- Prometheus connection
+- Prometheus visualization in garfan 
+- grafan marks and exploe the web page 
+- dashboard 
+- dashboard import and export
+- queries
+- Prometheus query page on 9090
+- Prometheus config files
+
+
 ---
 Completed till here only -- = --
 ---
