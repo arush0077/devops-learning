@@ -1,0 +1,6 @@
+name: ingress-component-example
+description: A Pulumi project demonstrating component resources for Kubernetes ingress
+runtime:
+  name: python
+  options:
+    virtualenv: venv
