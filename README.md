@@ -23,6 +23,8 @@ This repository contains structured knowledge, resources, and exercises to help 
 6. [Orchestration with Kubernetes](#6-orchestration-with-kubernetes)
 7. [IAC with Terraform](#7-terraform)
 8. [IAC with pulumi](#8-Pulumi)
+9. [Monitoring](#9-monitoring)
+10. [Gitlab](#10-gitlab)
 
 ---
 
@@ -305,7 +307,29 @@ Get hands-on with terminal-based Linux environments. Key areas:
 - queries
 - Prometheus query page on 9090
 - Prometheus config files
+- loki setup 
+- promtail for loki
+- loki logs collection and config
+- loki ready api
+- loki metrics
+- loki connection as data source
+- loki logs view as table
 
+### Hands on 
+
+- Hands on atsks from the Document of learning.
+
+---
+
+## 10. Gitlab 
+
+### 📘 Topics
+
+- GitLab Understanding
+- Pipelines
+- Runner
+- YAML
+- Visualization
 
 ---
 Completed till here only -- = --
