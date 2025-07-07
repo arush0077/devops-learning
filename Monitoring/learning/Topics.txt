@@ -11,3 +11,10 @@ queries
 Prometheus query page on 9090
 Prometheus config files
 
+loki setup 
+promtail for loki
+loki logs collection and config
+loki ready api
+loki metrics
+loki connection as data source
+loki logs view as table
