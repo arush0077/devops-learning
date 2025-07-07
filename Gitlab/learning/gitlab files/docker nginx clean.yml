@@ -1,0 +1,106 @@
+stages:
+  - pull
+  - run
+  - test
+  - cleanup
+
+pull_nginx:
+  stage: pull
+  image: docker:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_HOST: tcp://docker:2375/
+    DOCKER_TLS_CERTDIR: ""
+  script:
+    - echo "🔽 Pulling NGINX..." | tee pull.log
+    - docker pull nginx 2>&1 | tee -a pull.log
+  artifacts:
+    paths:
+      - pull.log
+
+run_nginx:
+  stage: run
+  image: docker:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_HOST: tcp://docker:2375/
+    DOCKER_TLS_CERTDIR: ""
+  script:
+    - echo "🚀 Running NGINX container..." | tee run.log
+    - docker run -d -p 8080:80 --name nginx_test nginx 2>&1 | tee -a run.log
+    - docker ps 2>&1 | tee -a run.log
+  artifacts:
+    paths:
+      - run.log
+  needs: [pull_nginx]
+
+test_nginx:
+  stage: test
+  image: docker:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_HOST: tcp://docker:2375/
+    DOCKER_TLS_CERTDIR: ""
+  before_script:
+    - apk add --no-cache curl
+  script:
+    - echo "🌐 Testing NGINX..." | tee test.log
+    - docker exec nginx_test curl localhost 2>&1 | tee -a test.log || echo "⚠️ NGINX unreachable" | tee -a test.log
+  artifacts:
+    paths:
+      - test.log
+  needs: [run_nginx]
+
+cleanup_nginx:
+  stage: cleanup
+  image: docker:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_HOST: tcp://docker:2375/
+    DOCKER_TLS_CERTDIR: ""
+  script:
+    - echo "🧹 Cleaning up..." | tee cleanup.log
+    - docker rm -f nginx_test 2>&1 | tee -a cleanup.log || echo "No container found" | tee -a cleanup.log
+  artifacts:
+    paths:
+      - cleanup.log
+  needs: [test_nginx]
+
+
+
+-------------
+
+
+# part2
+
+
+image: docker:20.10.16
+
+services:
+  - docker:dind
+
+variables:
+  DOCKER_TLS_CERTDIR: ""
+  IMAGE_NAME: my-nginx-test
+  CONTAINER_NAME: nginx-test-container
+
+stages:
+  - build_and_test
+
+build_and_test:
+  stage: build_and_test
+  script:
+    - apk add --no-cache curl  # install curl in the runner image
+    - docker build -t $IMAGE_NAME .
+    - docker run -d --name $CONTAINER_NAME $IMAGE_NAME
+    - sleep 3
+    # install curl inside the running container and test nginx internally
+    - docker exec $CONTAINER_NAME apk add --no-cache curl
+    - docker exec $CONTAINER_NAME curl  localhost 
+
+
+

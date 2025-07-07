@@ -1,0 +1,18 @@
+stages:
+  - deploy
+
+variables:
+  CONTAINER_NAME: "nginx-${CI_PIPELINE_IID}"
+
+# Deploy Nginx container
+deploy_nginx:
+  stage: deploy
+  script:
+    - echo "Running Nginx container on port 80..."
+    - docker run -d --name $CONTAINER_NAME -p 80:80 nginx:latest
+    - echo "Sleeping for 5 seconds to let Nginx start..."
+    - sleep 5
+    - echo "Checking Nginx with curl..."
+    - curl.exe http://localhost
+  tags:
+    - edith
