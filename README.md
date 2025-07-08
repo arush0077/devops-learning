@@ -25,6 +25,7 @@ This repository contains structured knowledge, resources, and exercises to help 
 8. [IAC with pulumi](#8-Pulumi)
 9. [Monitoring](#9-monitoring)
 10. [Gitlab](#10-gitlab)
+11. [Alloy Agent](#11-Alloyagent)
 
 ---
 
@@ -328,14 +329,40 @@ Get hands-on with terminal-based Linux environments. Key areas:
 - GitLab Understanding
 - Pipelines
 - Runner
-- YAML
-- Visualization
+- Visualization 
+- Variables Usage  
+- Artifacts Handling  
+- Pipeline Triggers  
+- Environments & Deployments  
+- Manual Jobs & Auto Approvals  
+- Includes & Templates  
+- Runner Tags   
+- Complex job relations between differnt jobs 
+
+
+### Project
+
+- Chat-App Pulumi pipeline on My own machine as the runner.
 
 ---
-Completed till here only -- = --
+## 10. Alloy Agent 
+
+### 📘 Topics
+
+- Alloy Agent:  
+- Alloy Agent Installation  
+- Grafana Connection  
+- Alloy Dashboards  
+- Resource Limits 
+
+
+---
+
+## Basic Devops Traininng Completed [08/07/2025]
+
 ---
 
 
 ## ✅ Final Verdict :
 
-This is a **living document** and will be updated as I learn and apply more concepts. 
+This is a **Final  document** of all the topics I Completed during the training Time period. 
