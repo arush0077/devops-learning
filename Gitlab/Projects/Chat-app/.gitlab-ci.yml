@@ -1,0 +1,101 @@
+stages:
+  - build
+  - deploy
+  # - check
+  - destroy
+
+variables:
+  DOCKER_HUB_USERNAME: arush75
+  PULUMI_CONFIG_PASSPHRASE: "root"
+  KUBECONFIG: "C:/Users/AppPerfect/.kube/config"
+  # Define these variables in GitLab CI/CD settings
+  # DOCKER_HUB_ACCESS_TOKEN: secure variable (Docker Hub PAT) in GitLab
+  # PULUMI_ACCESS_TOKEN: secure variable in GitLab
+
+default:
+  tags:
+    - edith
+
+build-frontend:
+  stage: build
+
+  before_script:
+    - echo "$DOCKER_HUB_ACCESS_TOKEN" | docker login -u "$DOCKER_HUB_USERNAME" --password-stdin
+  script:
+    - cd App_code/frontend
+    - docker build -t $DOCKER_HUB_USERNAME/chat-app-frontend:latest .
+    - docker push $DOCKER_HUB_USERNAME/chat-app-frontend:latest
+  only:
+    - main
+
+build-backend:
+  stage: build
+
+  before_script:
+    - echo "$DOCKER_HUB_ACCESS_TOKEN" | docker login -u "$DOCKER_HUB_USERNAME" --password-stdin
+  script:
+    - cd App_code/backend
+    - docker build -t $DOCKER_HUB_USERNAME/chat-app-backend:latest .
+    - docker push $DOCKER_HUB_USERNAME/chat-app-backend:latest
+  only:
+    - main
+
+deploy-pulumi:
+  stage: deploy
+  before_script:
+    - cd Pulumi
+    - python -m venv .venv
+    - .\.venv\Scripts\Activate.ps1
+    - pip install -r requirements.txt
+
+    - pulumi version
+    - pulumi login
+    # - pulumi stack init dev
+    - pulumi stack select dev
+  script:
+    - pulumi config set iam iam --non-interactive
+    - pulumi config get iam --non-interactive
+    - pulumi config set iamsecret iamsecret --secret --non-interactive
+    - pulumi config get iamsecret --non-interactive
+    # Deploy with retry to handle concurrent update conflicts
+    - |
+      $max=3
+      for ($i=0; $i -lt $max; $i++) {
+        pulumi up --yes --skip-preview --non-interactive
+        if ($LASTEXITCODE -eq 0) { break }
+        Write-Host "pulumi up returned $LASTEXITCODE, attempting cancel and retry..."
+        pulumi cancel --yes --force
+        Start-Sleep -Seconds 5
+      }
+  only:
+    - main
+  environment:
+    name: production
+
+
+# check-pulumi:
+#   stage: check
+#   script:
+#     - ls Pulumi 
+#   needs: [deploy-pulumi]
+
+
+
+destroy-pulumi:
+  stage: destroy
+  before_script:
+    - cd Pulumi
+    - python -m venv .venv
+    - .\.venv\Scripts\Activate.ps1
+    - pip install -r requirements.txt
+    - pulumi login
+    - pulumi stack select dev
+    - pulumi cancel --yes -f; if ($LASTEXITCODE -ne 0) { Write-Host "No ongoing update"; $LASTEXITCODE = 0 }
+  script:
+    - pulumi destroy --yes --skip-preview --non-interactive 
+  when: manual
+  only:
+    - main
+
+
+

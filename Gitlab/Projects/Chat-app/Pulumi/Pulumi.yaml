@@ -1,0 +1,6 @@
+name: chat-app
+description: Chat application deployment using Pulumi
+runtime:
+  name: python
+  options:
+    virtualenv: venv
