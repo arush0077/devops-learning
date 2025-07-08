@@ -46,6 +46,7 @@ After deploying with Pulumi, run the following command in other terminal to acce
 
 ```bash
 kubectl port-forward svc/loki-service -n monitoring 3100:3100 #[optional]
+kubectl port-forward svc/prometheus-service -n monitoring 9090:9090 #[optional]
 kubectl port-forward svc/grafana-service -n monitoring 3000:80
 
 ```
@@ -57,15 +58,28 @@ Then access:
 - Go to data sources in the monitoring grafana and try prometheus with url -> http://prometheus-service.monitoring.svc.cluster.local:9090
 - Import Dashboard from dashboard.json in the current folder
 
+### Optional for load testing on anginx server 
+
+
+
+```bash
+
+kubectl apply -f testloadf.yml
+
+```
+- Import Dashboard from nginx-load-dashboard.json in the current folder
+- ALL set
 ### Destroy the Infrastructure
 
 ```bash
 pulumi destroy --yes  --skip-preview
+
 #Press <Enter> for passphrase
 ```
 
 ```bash
 deactivate
+kubectl delete -f testloadf.yml
 rm -r .\venv\
 ```
 

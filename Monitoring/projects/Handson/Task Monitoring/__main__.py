@@ -58,6 +58,17 @@ node_exporter_daemonset = k8s.apps.v1.DaemonSet("node-exporter",
     }
 )
 
+node_exporter_service = k8s.core.v1.Service("node-exporter-service",
+    metadata={"namespace": monitoring_ns.metadata["name"], "name": "node-exporter"},
+    spec={
+        "selector": node_exporter_labels,
+        "ports": [{
+            "port": 9100,
+            "targetPort": 9100
+        }],
+        "type": "ClusterIP"
+    }
+)
 
 # [Task 2]
 grafana_ingress = k8s.networking.v1.Ingress("grafana-ingress",
@@ -223,12 +234,15 @@ pulumi.export("grafana-service-name", grafana_service.metadata["name"])
 
 prometheus_config = """
 global:
-  scrape_interval: 15s
+  scrape_interval: 5s
 
 scrape_configs:
   - job_name: 'node-exporter'
     static_configs:
       - targets: ['node-exporter.monitoring.svc.cluster.local:9100']
+  - job_name: 'nginx-exporter'
+    static_configs:
+      - targets: ['nginx-metrics.testing.svc.cluster.local:9113']
 """
 
 prometheus_cm = k8s.core.v1.ConfigMap("prometheus-config",
