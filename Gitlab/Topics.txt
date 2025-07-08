@@ -1,0 +1,16 @@
+GitLab Understanding
+Pipelines
+Runner
+Visualization 
+Variables Usage  
+Artifacts Handling  
+Pipeline Triggers  
+Environments & Deployments  
+Manual Jobs & Auto Approvals  
+Includes & Templates  
+Runner Tags  
+Alloy Agent:  
+Alloy Agent Installation  
+Grafana Connection  
+Alloy Dashboards  
+Resource Limits  
